@@ -277,6 +277,11 @@ def main():
                         help="Invia sul webhook di prova (DISCORD_WEBHOOK_PROVA) e ignora l'orario.")
     args = parser.parse_args()
 
+    # File di stato separato per la prova: così i test NON toccano la memoria
+    # del canale vero, ma hanno comunque un loro anti-doppione persistente.
+    global STATO_FILE
+    STATO_FILE = "gia_postati_prova.json" if args.prova else "gia_postati.json"
+
     # Scelta del webhook: in prova si usa il canale di test
     webhook = os.getenv("DISCORD_WEBHOOK_PROVA") if args.prova else WEBHOOK_URL
     if not webhook:
@@ -304,12 +309,11 @@ def main():
     canale = "PROVA" if args.prova else "normale"
     print(f"Inviato ({canale}): [{scelto['fonte']}] {scelto['titolo']}  (score {scelto['score']:.1f})")
 
-    # La memoria si aggiorna solo per gli invii veri, così il canale di prova
-    # non "consuma" le notizie del canale normale.
-    if not args.prova:
-        stato["postati"][scelto["url"]] = datetime.now(timezone.utc).isoformat()
-        stato["last_source"] = scelto["fonte"]
-        salva_stato(stato)
+    # Si salva la memoria in entrambe le modalità, ma su file diversi
+    # (STATO_FILE è stato scelto in base a --prova all'inizio di main).
+    stato["postati"][scelto["url"]] = datetime.now(timezone.utc).isoformat()
+    stato["last_source"] = scelto["fonte"]
+    salva_stato(stato)
 
 
 if __name__ == "__main__":
