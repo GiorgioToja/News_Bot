@@ -1,0 +1,58 @@
+name: breaking-news-bot
+
+on:
+  schedule:
+    # cron è SEMPRE in UTC: lancio ogni ora dalle 07 alle 20 UTC e lascio che
+    # news_bot.py filtri le ore di Roma (9, 12, 15, 18, 21). Così il cambio
+    # dell'ora legale non sposta nulla.
+    - cron: "0 7-20 * * *"
+
+  # Avvio manuale dal sito (tab "Actions" -> "Run workflow").
+  # Spuntando "prova" si invia al canale di test invece che a quello normale.
+  workflow_dispatch:
+    inputs:
+      prova:
+        description: "Esecuzione di prova (invia al canale di test)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write                # serve per ricommittare gia_postati.json
+
+concurrency:
+  group: news-bot                # niente due esecuzioni sovrapposte
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa le dipendenze
+        run: pip install -r requirements.txt
+
+      - name: Esegui il bot
+        env:
+          DISCORD_WEBHOOK:       ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK_PROVA: ${{ secrets.DISCORD_WEBHOOK_PROVA }}
+        run: |
+          if [ "${{ inputs.prova }}" = "true" ]; then
+            python news_bot.py --prova
+          else
+            python news_bot.py
+          fi
+
+      # Salva lo stato solo per le esecuzioni vere (la prova non tocca il file).
+      - name: Salva lo stato (URL già postati)
+        if: ${{ inputs.prova != true }}
+        run: |
+          git config user.name  "news-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add gia_postati.json
+          git commit -m "stato: aggiorno le notizie postate" || echo "niente da committare"
+          git push
