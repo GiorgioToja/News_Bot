@@ -30,6 +30,16 @@ TOP_K = 3                 # fra quanti candidati fare la scelta pesata-casuale
 SOGLIA_SIMILI = 0.55      # somiglianza fra titoli per dire "è la stessa notizia"
 RICHIEDI_WHITELIST = True # se True, scarta chi non contiene alcun tema della whitelist
 
+# Varietà di argomento: penalizza chi assomiglia alle ultime notizie già postate
+PENALITA_TEMA = 0.35      # moltiplicatore se è sullo stesso tema di una appena postata
+SOGLIA_TEMA = 0.50        # quanto simili i titoli per considerarli "stesso argomento"
+MEMORIA_TITOLI = 6        # quanti titoli recenti ricordare per il confronto tematico
+
+# Slot "Italia": una volta al giorno ANSA riceve un forte peso, altrimenti
+# non verrebbe mai scelta (niente peer internazionali -> risonanza sempre 1)
+ORA_ITALIA = 18            # ora di Roma dello slot dedicato alla notizia nazionale
+BONUS_ITALIA = 6.0        # bonus di punteggio dato ad ANSA in quello slot
+
 FEEDS = [
     {"fonte": "ANSA",         "ambito": "italia",         "url": "https://www.ansa.it/sito/notizie/topnews/topnews_rss.xml"},
     {"fonte": "France 24",    "ambito": "internazionale", "url": "https://www.france24.com/en/rss"},
@@ -238,13 +248,34 @@ def punteggio(item, tutti):
     return recency + (ris - 1) * 2.0 + boost * 0.5
 
 
-def scegli(candidati, last_source):
-    """Dà un punteggio a tutti, prende i migliori TOP_K e ne estrae uno a caso,
-    pesato sul punteggio e con un freno sulla fonte usata l'ultima volta (varietà)."""
+def stesso_argomento(titolo, ultimi_titoli):
+    """True se il titolo assomiglia a una delle ultime notizie già postate."""
+    tn = normalizza(titolo)
+    return any(
+        SequenceMatcher(None, tn, t).ratio() >= SOGLIA_TEMA
+        for t in ultimi_titoli
+    )
+
+
+def scegli(candidati, last_source, ultimi_titoli, slot_italia):
+    """Dà un punteggio a tutti, prende i migliori TOP_K e ne estrae uno a caso.
+    Il punteggio tiene conto di: freschezza + risonanza + temi (vedi punteggio),
+    più lo slot Italia (bonus ad ANSA) e il malus di argomento ripetuto.
+    In fase di estrazione frena anche la fonte usata l'ultima volta."""
     if not candidati:
         return None
+
     for c in candidati:
-        c["score"] = punteggio(c, candidati)
+        s = punteggio(c, candidati)
+        # Slot Italia: una volta al giorno la notizia nazionale pesa molto di più.
+        if slot_italia and c["ambito"] == "italia":
+            s += BONUS_ITALIA
+        # Malus argomento: se batte lo stesso tema di una notizia appena postata,
+        # pesa molto meno (così il bot cambia soggetto invece di insistere).
+        if stesso_argomento(c["titolo"], ultimi_titoli):
+            s *= PENALITA_TEMA
+        c["score"] = s
+
     candidati.sort(key=lambda c: c["score"], reverse=True)
 
     top = candidati[:TOP_K]
@@ -297,10 +328,14 @@ def main():
         return
 
     stato = carica_stato()
-    candidati = raccogli_candidati(stato["postati"])
-    print(f"Candidati freschi e pertinenti: {len(candidati)}")
+    ultimi_titoli = stato.get("ultimi_titoli", [])
+    slot_italia = (ora == ORA_ITALIA)      # una volta al giorno si dà peso ad ANSA
 
-    scelto = scegli(candidati, stato.get("last_source", ""))
+    candidati = raccogli_candidati(stato["postati"])
+    print(f"Candidati freschi e pertinenti: {len(candidati)}"
+          + (" | slot ITALIA attivo (bonus ANSA)" if slot_italia else ""))
+
+    scelto = scegli(candidati, stato.get("last_source", ""), ultimi_titoli, slot_italia)
     if scelto is None:
         print("Nessuna notizia da inviare in questo giro.")
         return
@@ -313,6 +348,10 @@ def main():
     # (STATO_FILE è stato scelto in base a --prova all'inizio di main).
     stato["postati"][scelto["url"]] = datetime.now(timezone.utc).isoformat()
     stato["last_source"] = scelto["fonte"]
+    # Aggiorna la lista dei titoli recenti (per il malus di argomento ripetuto)
+    tn = normalizza(scelto["titolo"])
+    stato["ultimi_titoli"] = [tn] + [t for t in ultimi_titoli if t != tn]
+    stato["ultimi_titoli"] = stato["ultimi_titoli"][:MEMORIA_TITOLI]
     salva_stato(stato)
 
 
