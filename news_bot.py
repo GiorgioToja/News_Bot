@@ -21,6 +21,7 @@ import feedparser
 
 # ========================= CONFIGURAZIONE =========================
 WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK")
+NOTIZIE_ROLE_ID = os.getenv("NOTIZIE_ROLE_ID", "")   # "" = nessuna menzione
 STATO_FILE = "gia_postati.json"
 
 ORE_ATTIVE = {9, 12, 15, 18, 21}           # ore (di Roma) in cui il bot agisce: ogni 3 ore
@@ -37,7 +38,7 @@ MEMORIA_TITOLI = 6        # quanti titoli recenti ricordare per il confronto tem
 
 # Slot "Italia": una volta al giorno ANSA riceve un forte peso, altrimenti
 # non verrebbe mai scelta (niente peer internazionali -> risonanza sempre 1)
-ORA_ITALIA = 18            # ora di Roma dello slot dedicato alla notizia nazionale
+ORA_ITALIA = 9            # ora di Roma dello slot dedicato alla notizia nazionale
 BONUS_ITALIA = 6.0        # bonus di punteggio dato ad ANSA in quello slot
 
 FEEDS = [
@@ -289,11 +290,17 @@ def scegli(candidati, last_source, ultimi_titoli, slot_italia):
 
 
 # ========================= INVIO =========================
-def invia_discord(item, webhook):
+def invia_discord(item, webhook, role_id=""):
     testo = f"**{item['fonte']}** · {item['titolo']}\n{item['url']}"
-    payload = json.dumps({"content": testo}).encode("utf-8")
+    payload = {"content": testo}
+    if role_id:
+        # La menzione va DOPO il link, su una riga a parte: Discord mostra
+        # comunque l'anteprima OG e in più "pinga" il ruolo @Notizie.
+        payload["content"] += f"\n<@&{role_id}>"
+        payload["allowed_mentions"] = {"roles": [role_id]}   # forza il ping
+    data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
-        webhook, data=payload,
+        webhook, data=data,
         headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
     )
     with urllib.request.urlopen(req) as resp:
@@ -340,9 +347,12 @@ def main():
         print("Nessuna notizia da inviare in questo giro.")
         return
 
-    invia_discord(scelto, webhook)
+    # In prova NON si pinga @Notizie (per non disturbare durante i test).
+    role = "" if args.prova else NOTIZIE_ROLE_ID
+    invia_discord(scelto, webhook, role)
     canale = "PROVA" if args.prova else "normale"
-    print(f"Inviato ({canale}): [{scelto['fonte']}] {scelto['titolo']}  (score {scelto['score']:.1f})")
+    tag = " +@Notizie" if role else ""
+    print(f"Inviato ({canale}{tag}): [{scelto['fonte']}] {scelto['titolo']}  (score {scelto['score']:.1f})")
 
     # Si salva la memoria in entrambe le modalità, ma su file diversi
     # (STATO_FILE è stato scelto in base a --prova all'inizio di main).
