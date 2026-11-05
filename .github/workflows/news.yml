@@ -1,11 +1,11 @@
 name: breaking-news-bot
 
 on:
-  #schedule:
+  schedule:
     # cron è SEMPRE in UTC: lancio ogni ora dalle 07 alle 20 UTC e lascio che
     # news_bot.py filtri le ore di Roma (9, 12, 15, 18, 21). Così il cambio
     # dell'ora legale non sposta nulla.
-   # - cron: "0 7-20 * * *"
+    - cron: "0 7-20 * * *"
 
   # Avvio manuale dal sito (tab "Actions" -> "Run workflow").
   # Spuntando "prova" si invia al canale di test invece che a quello normale.
@@ -40,6 +40,7 @@ jobs:
         env:
           DISCORD_WEBHOOK:       ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_WEBHOOK_PROVA: ${{ secrets.DISCORD_WEBHOOK_PROVA }}
+          NOTIZIE_ROLE_ID:       ${{ secrets.NOTIZIE_ROLE_ID }}
         run: |
           if [ "${{ inputs.prova }}" = "true" ]; then
             python news_bot.py --prova
