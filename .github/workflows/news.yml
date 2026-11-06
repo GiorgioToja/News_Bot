@@ -2,10 +2,10 @@ name: breaking-news-bot
 
 on:
   schedule:
-    # cron è SEMPRE in UTC: lancio ogni ora dalle 07 alle 20 UTC e lascio che
-    # news_bot.py filtri le ore di Roma (9, 12, 15, 18, 21). Così il cambio
-    # dell'ora legale non sposta nulla.
-    - cron: "0 7-20 * * *"
+    # cron è SEMPRE in UTC: lancio ogni ora dalle 07 alle 21 UTC e lascio che
+    # news_bot.py filtri le ore di Roma (slot 9, 12, 15, 18, 21 con tolleranza).
+    # Minuto :11 e non :00 per evitare la ressa in cima all'ora (ritardi minori).
+    - cron: "11 7-21 * * *"
 
   # Avvio manuale dal sito (tab "Actions" -> "Run workflow").
   # Spuntando "prova" si invia al canale di test invece che a quello normale.
