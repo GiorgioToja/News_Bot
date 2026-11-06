@@ -24,7 +24,9 @@ WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK")
 NOTIZIE_ROLE_ID = os.getenv("NOTIZIE_ROLE_ID", "")   # "" = nessuna menzione
 STATO_FILE = "gia_postati.json"
 
-ORE_ATTIVE = {9, 12, 15, 18, 21}           # ore (di Roma) in cui il bot agisce: ogni 3 ore
+SLOT_INIZIO = {9, 12, 15, 18, 21}  # ore (di Roma) di INIZIO degli slot giornalieri
+TOLLERANZA_SLOT = 2       # ore: un run in ritardo entro 2h posta comunque nello slot giusto
+                          # (il cron di GitHub non è puntuale: può ritardare o saltare)
 FRESCHEZZA_ORE = 3        # "super fresh": pubblicata nelle ultime 3 ore
 MEMORIA_GIORNI = 7        # per quanto tempo ricordare gli URL già postati
 TOP_K = 3                 # fra quanti candidati fare la scelta pesata-casuale
@@ -162,6 +164,15 @@ def normalizza(t):
 def pulisci_url(u):
     u = (u or "").strip()
     return u.split("?utm_")[0] if "?utm_" in u else u
+
+
+def slot_corrente(ora):
+    """Ora-di-inizio dello slot se 'ora' ci rientra (entro la tolleranza), altrimenti None.
+    Es. con tolleranza 2: lo slot delle 9 è valido per ora = 9 o 10."""
+    for inizio in SLOT_INIZIO:
+        if inizio <= ora < inizio + TOLLERANZA_SLOT:
+            return inizio
+    return None
 
 
 def eta_ore(entry):
@@ -327,16 +338,26 @@ def main():
         print(f"{manca} non impostato.")
         sys.exit(1)
 
-    # Cancello orario: cron è in UTC, quindi è il codice a controllare l'ora di Roma.
-    # In prova si ignora l'orario, così puoi testare a qualsiasi ora.
-    ora = datetime.now(FUSO).hour
-    if not args.prova and ora not in ORE_ATTIVE:
-        print(f"Ora di Roma = {ora}: fuori fascia (9-21 ogni 3h). Esco.")
-        return
-
     stato = carica_stato()
+
+    # Slot orari (ora di Roma) con tolleranza ai ritardi di GitHub.
+    # cron è in UTC: è il codice a tradurre in ora di Roma e a decidere.
+    ora = datetime.now(FUSO).hour
+    inizio_slot = slot_corrente(ora)
+    oggi = datetime.now(FUSO).strftime("%Y-%m-%d")
+    slot_id = f"{oggi}-{inizio_slot}" if inizio_slot is not None else None
+
+    # In prova si ignora tutto questo (si posta a qualsiasi ora, sul canale di test).
+    if not args.prova:
+        if inizio_slot is None:
+            print(f"Ora di Roma = {ora}: fuori dagli slot. Esco.")
+            return
+        if stato.get("ultimo_slot") == slot_id:
+            print(f"Slot {slot_id} già servito oggi. Esco (niente doppioni).")
+            return
+
     ultimi_titoli = stato.get("ultimi_titoli", [])
-    slot_italia = (ora == ORA_ITALIA)      # una volta al giorno si dà peso ad ANSA
+    slot_italia = (inizio_slot == ORA_ITALIA)   # una volta al giorno si dà peso ad ANSA
 
     candidati = raccogli_candidati(stato["postati"])
     print(f"Candidati freschi e pertinenti: {len(candidati)}"
@@ -362,6 +383,9 @@ def main():
     tn = normalizza(scelto["titolo"])
     stato["ultimi_titoli"] = [tn] + [t for t in ultimi_titoli if t != tn]
     stato["ultimi_titoli"] = stato["ultimi_titoli"][:MEMORIA_TITOLI]
+    # Segna lo slot come servito, così eventuali run doppi nello stesso slot non ripostano
+    if slot_id is not None:
+        stato["ultimo_slot"] = slot_id
     salva_stato(stato)
 
 
