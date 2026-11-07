@@ -1,11 +1,13 @@
 {
   "postati": {
     "https://www.theguardian.com/world/2026/nov/03/uk-cuts-aid-commonwealth-countries-despite-warm-words-at-chogm-summit": "2026-11-03T20:19:29.487047+00:00",
-    "https://www.ansa.it/sito/notizie/topnews/2026/11/06/dopo-insulti-e-minacce-disposta-la-vigilanza-per-la-gip-del-caso-siher_5ada5e59-e6d9-44ec-bdf1-1d64c9e004b8.html": "2026-11-06T08:56:22.180327+00:00"
+    "https://www.ansa.it/sito/notizie/topnews/2026/11/06/dopo-insulti-e-minacce-disposta-la-vigilanza-per-la-gip-del-caso-siher_5ada5e59-e6d9-44ec-bdf1-1d64c9e004b8.html": "2026-11-06T08:56:22.180327+00:00",
+    "https://www.theguardian.com/world/live/2026/nov/07/nz-general-election-2026-live-updates-results-new-zealand-polls": "2026-11-07T14:00:59.907797+00:00"
   },
-  "last_source": "ANSA",
+  "last_source": "The Guardian",
   "ultimi_titoli": [
+    "new zealand election coalition talks will likely take weeks as it happened",
     "dopo insulti e minacce disposta la vigilanza per la gip del caso siher"
   ],
-  "ultimo_slot": "2026-11-06-9"
+  "ultimo_slot": "2026-11-07-15"
 }
