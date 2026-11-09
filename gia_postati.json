@@ -10,16 +10,17 @@
     "https://www.theguardian.com/environment/2026/nov/08/cop31-key-players-climate-talks": "2026-11-08T14:00:57.260300+00:00",
     "https://www.theguardian.com/world/2026/nov/08/egypt-two-trains-deadly-collision": "2026-11-08T17:01:02.447305+00:00",
     "https://www.theguardian.com/environment/2026/nov/08/labour-cut-ev-target-car-industry-despite-climate-concerns": "2026-11-08T20:01:04.267918+00:00",
-    "https://www.ansa.it/sito/notizie/topnews/2026/11/09/borsa-lasia-chiude-in-rialzo-si-guarda-allintelligenza-artificiale_d52aa178-ac69-47c7-b6c2-b4de14383ac4.html": "2026-11-09T08:01:05.392140+00:00"
+    "https://www.ansa.it/sito/notizie/topnews/2026/11/09/borsa-lasia-chiude-in-rialzo-si-guarda-allintelligenza-artificiale_d52aa178-ac69-47c7-b6c2-b4de14383ac4.html": "2026-11-09T08:01:05.392140+00:00",
+    "https://www.theguardian.com/us-news/2026/nov/09/trump-tells-60-minutes-deportation-policy-too-tough-ice-immigration": "2026-11-09T11:01:04.314100+00:00"
   },
-  "last_source": "ANSA",
+  "last_source": "The Guardian",
   "ultimi_titoli": [
+    "trump admits deportation policy was too tough despite promotion of stephen miller",
     "borsa l asia chiude in rialzo si guarda all intelligenza artificiale",
     "labour expected to cut ev targets for uk s car industry despite mps protests",
     "collision of two trains in egypt kills at least four",
     "who s who at cop31 key players at the climate talks",
-    "attacchi informatici piantedosi convoca comitato sicurezza pubblica",
-    "trump s shattered mirror world american voters roundly reject president s alternate reality"
+    "attacchi informatici piantedosi convoca comitato sicurezza pubblica"
   ],
-  "ultimo_slot": "2026-11-09-9"
+  "ultimo_slot": "2026-11-09-12"
 }
