@@ -18,16 +18,17 @@
     "https://www.ansa.it/sito/notizie/topnews/2026/11/10/camorra-e-appalti-13-arresti-e-sequestro-tra-napoli-e-provincia_bf9ef598-72af-47e2-ac6a-52ed661357b9.html": "2026-11-10T08:01:01.569164+00:00",
     "https://www.theguardian.com/environment/live/2026/nov/10/cop31-live-fossil-fuel-carbon-emissions-climate-crisis-latest-news-updates": "2026-11-10T11:01:03.838874+00:00",
     "https://www.france24.com/en/video/20261110-new-israel-parliament-to-be-sworn-in-as-eisenkot-works-to-form-new-govt": "2026-11-10T14:01:04.055567+00:00",
-    "https://www.theguardian.com/world/live/2026/nov/10/ukraine-russia-war-us-talks-abu-dhabi-europe-latest-news-updates": "2026-11-10T17:01:03.068211+00:00"
+    "https://www.theguardian.com/world/live/2026/nov/10/ukraine-russia-war-us-talks-abu-dhabi-europe-latest-news-updates": "2026-11-10T17:01:03.068211+00:00",
+    "https://www.ansa.it/sito/notizie/topnews/2026/11/10/repubblicani-eleggono-il-trumpiano-jim-jordan-come-leader-alla-camera_1db17715-08c2-4e01-a0fe-9113ba88b70d.html": "2026-11-10T20:00:59.791545+00:00"
   },
-  "last_source": "The Guardian",
+  "last_source": "ANSA",
   "ultimi_titoli": [
+    "repubblicani eleggono il trumpiano jim jordan come leader alla camera",
     "russia ukraine talks very productive says us s rubio europe live",
     "new israel parliament to be sworn in as eisenkot works to form new govt",
     "cop31 live host turkey celebrates new oilfields as climate summit enters second day",
     "camorra e appalti 13 arresti e sequestro tra napoli e provincia",
-    "republican congressman to force impeachment vote on defence secretary hegseth",
-    "france blames iran s revolutionary guards for cyber attacks on supermarket fridges"
+    "republican congressman to force impeachment vote on defence secretary hegseth"
   ],
-  "ultimo_slot": "2026-11-10-18"
+  "ultimo_slot": "2026-11-10-21"
 }
