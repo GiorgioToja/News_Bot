@@ -40,7 +40,7 @@ jobs:
         env:
           DISCORD_WEBHOOK:       ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_WEBHOOK_PROVA: ${{ secrets.DISCORD_WEBHOOK_PROVA }}
-          NOTIZIE_ROLE_ID:       ${{ secrets.NOTIZIE_ROLE_ID }}
+         # NOTIZIE_ROLE_ID:       ${{ secrets.NOTIZIE_ROLE_ID }}
         run: |
           if [ "${{ inputs.prova }}" = "true" ]; then
             python news_bot.py --prova
