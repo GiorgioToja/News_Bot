@@ -24,7 +24,7 @@ WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK")
 NOTIZIE_ROLE_ID = os.getenv("NOTIZIE_ROLE_ID", "")   # "" = nessuna menzione
 STATO_FILE = "gia_postati.json"
 
-SLOT_INIZIO = {9, 12, 15, 18, 21}  # ore (di Roma) di INIZIO degli slot giornalieri
+SLOT_INIZIO = {9, 12, 18, 21}  # ore (di Roma) di INIZIO degli slot giornalieri
 TOLLERANZA_SLOT = 2       # ore: un run in ritardo entro 2h posta comunque nello slot giusto
                           # (il cron di GitHub non è puntuale: può ritardare o saltare)
 FRESCHEZZA_ORE = 3        # "super fresh": pubblicata nelle ultime 3 ore
@@ -40,7 +40,7 @@ MEMORIA_TITOLI = 6        # quanti titoli recenti ricordare per il confronto tem
 
 # Slot "Italia": una volta al giorno ANSA riceve un forte peso, altrimenti
 # non verrebbe mai scelta (niente peer internazionali -> risonanza sempre 1)
-ORA_ITALIA = 18            # ora di Roma dello slot dedicato alla notizia nazionale
+ORA_ITALIA = 9            # ora di Roma dello slot dedicato alla notizia nazionale
 BONUS_ITALIA = 6.0        # bonus di punteggio dato ad ANSA in quello slot
 
 FEEDS = [
