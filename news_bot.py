@@ -24,7 +24,7 @@ WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK")
 NOTIZIE_ROLE_ID = os.getenv("NOTIZIE_ROLE_ID", "")   # "" = nessuna menzione
 STATO_FILE = "gia_postati.json"
 
-SLOT_INIZIO = {9, 12, 18, 21}  # ore (di Roma) di INIZIO degli slot giornalieri
+SLOT_INIZIO = {18}  # ore (di Roma) di INIZIO degli slot giornalieri
 TOLLERANZA_SLOT = 2       # ore: un run in ritardo entro 2h posta comunque nello slot giusto
                           # (il cron di GitHub non è puntuale: può ritardare o saltare)
 FRESCHEZZA_ORE = 3        # "super fresh": pubblicata nelle ultime 3 ore
