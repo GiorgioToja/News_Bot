@@ -1,6 +1,5 @@
 {
   "postati": {
-    "https://www.ansa.it/sito/notizie/topnews/2026/11/06/dopo-insulti-e-minacce-disposta-la-vigilanza-per-la-gip-del-caso-siher_5ada5e59-e6d9-44ec-bdf1-1d64c9e004b8.html": "2026-11-06T08:56:22.180327+00:00",
     "https://www.theguardian.com/world/live/2026/nov/07/nz-general-election-2026-live-updates-results-new-zealand-polls": "2026-11-07T14:00:59.907797+00:00",
     "https://www.bbc.co.uk/news/articles/cr20wvge32j3o?at_medium=RSS&at_campaign=rss": "2026-11-07T17:01:01.982805+00:00",
     "https://www.theguardian.com/environment/2026/nov/08/chris-bowen-cop31-experts-condemn-australia-coal-gas-approvals": "2026-11-07T20:00:58.580956+00:00",
@@ -25,16 +24,17 @@
     "https://www.ansa.it/sito/notizie/topnews/2026/11/11/futuro-nazionale-non-ricevuto-alcun-invito-al-tavolo-sulla-cybersicurezza-a-p.chigi_8986e618-711e-4352-b3f7-c5cec5c45aba.html": "2026-11-11T17:01:02.811684+00:00",
     "https://www.theguardian.com/us-news/live/2026/nov/11/donald-trump-pete-hegseth-impeachment-democrats-republicans-arlington-latest-news-updates": "2026-11-11T20:00:55.889294+00:00",
     "https://www.theguardian.com/business/2026/nov/12/uk-economy-grows-third-quarter-oil-price-ons-gdp": "2026-11-12T08:00:57.645846+00:00",
-    "https://www.theguardian.com/technology/live/2026/nov/12/nvidia-ceo-jensen-huang-affairs-share-price-plunges-live-latest": "2026-11-12T17:01:03.526959+00:00"
+    "https://www.theguardian.com/technology/live/2026/nov/12/nvidia-ceo-jensen-huang-affairs-share-price-plunges-live-latest": "2026-11-12T17:01:03.526959+00:00",
+    "https://www.france24.com/en/video/20261113-nvidia-scandal-how-close-was-ex-ceo-to-trump": "2026-11-13T17:01:07.053385+00:00"
   },
-  "last_source": "The Guardian",
+  "last_source": "France 24",
   "ultimi_titoli": [
+    "nvidia scandal how close was ex ceo to trump",
     "nvidia ceo jensen huang resigns over scandal and is replaced by cfo colette kress on interim basis follow live",
     "uk economy grows by 0 7 in third quarter despite high oil prices",
     "trump praises hegseth after failed impeachment effort and shrugs off iran war criticism live",
     "futuro nazionale non ricevuto alcun invito al tavolo sulla cybersicurezza a p chigi",
-    "us house votes to derail impeachment of defense secretary hegseth",
-    "burnham hails approval for two huge windfarm projects as power under british control uk politics live"
+    "us house votes to derail impeachment of defense secretary hegseth"
   ],
-  "ultimo_slot": "2026-11-12-18"
+  "ultimo_slot": "2026-11-13-18"
 }
