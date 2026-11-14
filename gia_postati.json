@@ -1,6 +1,5 @@
 {
   "postati": {
-    "https://www.theguardian.com/world/live/2026/nov/07/nz-general-election-2026-live-updates-results-new-zealand-polls": "2026-11-07T14:00:59.907797+00:00",
     "https://www.bbc.co.uk/news/articles/cr20wvge32j3o?at_medium=RSS&at_campaign=rss": "2026-11-07T17:01:01.982805+00:00",
     "https://www.theguardian.com/environment/2026/nov/08/chris-bowen-cop31-experts-condemn-australia-coal-gas-approvals": "2026-11-07T20:00:58.580956+00:00",
     "https://www.theguardian.com/us-news/ng-interactive/2026/nov/08/trump-midterms-voters-mirror-world": "2026-11-08T08:01:01.270796+00:00",
@@ -25,16 +24,17 @@
     "https://www.theguardian.com/us-news/live/2026/nov/11/donald-trump-pete-hegseth-impeachment-democrats-republicans-arlington-latest-news-updates": "2026-11-11T20:00:55.889294+00:00",
     "https://www.theguardian.com/business/2026/nov/12/uk-economy-grows-third-quarter-oil-price-ons-gdp": "2026-11-12T08:00:57.645846+00:00",
     "https://www.theguardian.com/technology/live/2026/nov/12/nvidia-ceo-jensen-huang-affairs-share-price-plunges-live-latest": "2026-11-12T17:01:03.526959+00:00",
-    "https://www.france24.com/en/video/20261113-nvidia-scandal-how-close-was-ex-ceo-to-trump": "2026-11-13T17:01:07.053385+00:00"
+    "https://www.france24.com/en/video/20261113-nvidia-scandal-how-close-was-ex-ceo-to-trump": "2026-11-13T17:01:07.053385+00:00",
+    "https://www.france24.com/en/us-transport-secretary-asks-congress-for-30-bn-to-upgrade-aviation-infrastructure": "2026-11-14T17:01:01.174504+00:00"
   },
   "last_source": "France 24",
   "ultimi_titoli": [
+    "us transport secretary asks congress for 30 bn to upgrade aviation infrastructure",
     "nvidia scandal how close was ex ceo to trump",
     "nvidia ceo jensen huang resigns over scandal and is replaced by cfo colette kress on interim basis follow live",
     "uk economy grows by 0 7 in third quarter despite high oil prices",
     "trump praises hegseth after failed impeachment effort and shrugs off iran war criticism live",
-    "futuro nazionale non ricevuto alcun invito al tavolo sulla cybersicurezza a p chigi",
-    "us house votes to derail impeachment of defense secretary hegseth"
+    "futuro nazionale non ricevuto alcun invito al tavolo sulla cybersicurezza a p chigi"
   ],
-  "ultimo_slot": "2026-11-13-18"
+  "ultimo_slot": "2026-11-14-18"
 }
