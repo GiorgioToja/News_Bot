@@ -1,10 +1,5 @@
 {
   "postati": {
-    "https://www.theguardian.com/world/2026/nov/08/egypt-two-trains-deadly-collision": "2026-11-08T17:01:02.447305+00:00",
-    "https://www.theguardian.com/environment/2026/nov/08/labour-cut-ev-target-car-industry-despite-climate-concerns": "2026-11-08T20:01:04.267918+00:00",
-    "https://www.ansa.it/sito/notizie/topnews/2026/11/09/borsa-lasia-chiude-in-rialzo-si-guarda-allintelligenza-artificiale_d52aa178-ac69-47c7-b6c2-b4de14383ac4.html": "2026-11-09T08:01:05.392140+00:00",
-    "https://www.theguardian.com/us-news/2026/nov/09/trump-tells-60-minutes-deportation-policy-too-tough-ice-immigration": "2026-11-09T11:01:04.314100+00:00",
-    "https://www.france24.com/en/iran-sees-golden-opportunity-for-a-sweetheart-deal-after-us-midterms-expert-says": "2026-11-09T14:01:01.474522+00:00",
     "https://www.theguardian.com/world/2026/nov/09/france-blames-irans-revolutionary-guards-for-cyber-attacks-on-supermarket-fridges": "2026-11-09T17:01:08.033685+00:00",
     "https://www.bbc.co.uk/news/articles/cwr5y58jjp8ro?at_medium=RSS&at_campaign=rss": "2026-11-09T20:01:02.950785+00:00",
     "https://www.ansa.it/sito/notizie/topnews/2026/11/10/camorra-e-appalti-13-arresti-e-sequestro-tra-napoli-e-provincia_bf9ef598-72af-47e2-ac6a-52ed661357b9.html": "2026-11-10T08:01:01.569164+00:00",
@@ -21,16 +16,17 @@
     "https://www.theguardian.com/technology/live/2026/nov/12/nvidia-ceo-jensen-huang-affairs-share-price-plunges-live-latest": "2026-11-12T17:01:03.526959+00:00",
     "https://www.france24.com/en/video/20261113-nvidia-scandal-how-close-was-ex-ceo-to-trump": "2026-11-13T17:01:07.053385+00:00",
     "https://www.france24.com/en/us-transport-secretary-asks-congress-for-30-bn-to-upgrade-aviation-infrastructure": "2026-11-14T17:01:01.174504+00:00",
-    "https://www.theguardian.com/world/live/2026/nov/15/middle-east-crisis-live-iran-bahrain-strikes-gulf-donald-trump-us-israel-yemen-houthis": "2026-11-15T17:01:02.353304+00:00"
+    "https://www.theguardian.com/world/live/2026/nov/15/middle-east-crisis-live-iran-bahrain-strikes-gulf-donald-trump-us-israel-yemen-houthis": "2026-11-15T17:01:02.353304+00:00",
+    "https://www.bbc.co.uk/news/articles/cw987343352go?at_medium=RSS&at_campaign=rss": "2026-11-16T17:01:02.396489+00:00"
   },
-  "last_source": "The Guardian",
+  "last_source": "BBC",
   "ultimi_titoli": [
+    "five eu countries announce migrant deportation centre in rwanda",
     "saudi arabia qatar jordan egypt condemn iranian attack on bahrain as it happened",
     "us transport secretary asks congress for 30 bn to upgrade aviation infrastructure",
     "nvidia scandal how close was ex ceo to trump",
     "nvidia ceo jensen huang resigns over scandal and is replaced by cfo colette kress on interim basis follow live",
-    "uk economy grows by 0 7 in third quarter despite high oil prices",
-    "trump praises hegseth after failed impeachment effort and shrugs off iran war criticism live"
+    "uk economy grows by 0 7 in third quarter despite high oil prices"
   ],
-  "ultimo_slot": "2026-11-15-18"
+  "ultimo_slot": "2026-11-16-18"
 }
