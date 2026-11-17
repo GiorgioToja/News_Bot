@@ -1,11 +1,5 @@
 {
   "postati": {
-    "https://www.theguardian.com/world/2026/nov/09/france-blames-irans-revolutionary-guards-for-cyber-attacks-on-supermarket-fridges": "2026-11-09T17:01:08.033685+00:00",
-    "https://www.bbc.co.uk/news/articles/cwr5y58jjp8ro?at_medium=RSS&at_campaign=rss": "2026-11-09T20:01:02.950785+00:00",
-    "https://www.ansa.it/sito/notizie/topnews/2026/11/10/camorra-e-appalti-13-arresti-e-sequestro-tra-napoli-e-provincia_bf9ef598-72af-47e2-ac6a-52ed661357b9.html": "2026-11-10T08:01:01.569164+00:00",
-    "https://www.theguardian.com/environment/live/2026/nov/10/cop31-live-fossil-fuel-carbon-emissions-climate-crisis-latest-news-updates": "2026-11-10T11:01:03.838874+00:00",
-    "https://www.france24.com/en/video/20261110-new-israel-parliament-to-be-sworn-in-as-eisenkot-works-to-form-new-govt": "2026-11-10T14:01:04.055567+00:00",
-    "https://www.theguardian.com/world/live/2026/nov/10/ukraine-russia-war-us-talks-abu-dhabi-europe-latest-news-updates": "2026-11-10T17:01:03.068211+00:00",
     "https://www.ansa.it/sito/notizie/topnews/2026/11/10/repubblicani-eleggono-il-trumpiano-jim-jordan-come-leader-alla-camera_1db17715-08c2-4e01-a0fe-9113ba88b70d.html": "2026-11-10T20:00:59.791545+00:00",
     "https://www.ansa.it/sito/notizie/topnews/2026/11/11/borsa-asia-in-rialzo-bene-il-comparto-tecnologico-tokyo-13_07d4b6ad-7205-41a6-a6cb-c65bf45fe33e.html": "2026-11-11T08:00:57.966643+00:00",
     "https://www.theguardian.com/politics/live/2026/nov/11/andy-burnham-kemi-badenoch-pmqs-cop31-windfarms-europe-brexit-latest-news-updates": "2026-11-11T11:00:59.939752+00:00",
@@ -17,16 +11,17 @@
     "https://www.france24.com/en/video/20261113-nvidia-scandal-how-close-was-ex-ceo-to-trump": "2026-11-13T17:01:07.053385+00:00",
     "https://www.france24.com/en/us-transport-secretary-asks-congress-for-30-bn-to-upgrade-aviation-infrastructure": "2026-11-14T17:01:01.174504+00:00",
     "https://www.theguardian.com/world/live/2026/nov/15/middle-east-crisis-live-iran-bahrain-strikes-gulf-donald-trump-us-israel-yemen-houthis": "2026-11-15T17:01:02.353304+00:00",
-    "https://www.bbc.co.uk/news/articles/cw987343352go?at_medium=RSS&at_campaign=rss": "2026-11-16T17:01:02.396489+00:00"
+    "https://www.bbc.co.uk/news/articles/cw987343352go?at_medium=RSS&at_campaign=rss": "2026-11-16T17:01:02.396489+00:00",
+    "https://www.theguardian.com/world/2026/nov/17/trump-reported-iranian-plot-dirty-bomb-washington": "2026-11-17T17:01:05.501940+00:00"
   },
-  "last_source": "BBC",
+  "last_source": "The Guardian",
   "ultimi_titoli": [
+    "trump claims us is looking into iranian bomb plot in washington despite no credible threats",
     "five eu countries announce migrant deportation centre in rwanda",
     "saudi arabia qatar jordan egypt condemn iranian attack on bahrain as it happened",
     "us transport secretary asks congress for 30 bn to upgrade aviation infrastructure",
     "nvidia scandal how close was ex ceo to trump",
-    "nvidia ceo jensen huang resigns over scandal and is replaced by cfo colette kress on interim basis follow live",
-    "uk economy grows by 0 7 in third quarter despite high oil prices"
+    "nvidia ceo jensen huang resigns over scandal and is replaced by cfo colette kress on interim basis follow live"
   ],
-  "ultimo_slot": "2026-11-16-18"
+  "ultimo_slot": "2026-11-17-18"
 }
