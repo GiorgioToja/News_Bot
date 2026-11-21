@@ -1,21 +1,21 @@
 {
   "postati": {
-    "https://www.france24.com/en/us-transport-secretary-asks-congress-for-30-bn-to-upgrade-aviation-infrastructure": "2026-11-14T17:01:01.174504+00:00",
     "https://www.theguardian.com/world/live/2026/nov/15/middle-east-crisis-live-iran-bahrain-strikes-gulf-donald-trump-us-israel-yemen-houthis": "2026-11-15T17:01:02.353304+00:00",
     "https://www.bbc.co.uk/news/articles/cw987343352go?at_medium=RSS&at_campaign=rss": "2026-11-16T17:01:02.396489+00:00",
     "https://www.theguardian.com/world/2026/nov/17/trump-reported-iranian-plot-dirty-bomb-washington": "2026-11-17T17:01:05.501940+00:00",
     "https://www.theguardian.com/world/live/2026/nov/18/apec-summit-live-updates-xi-putin-trump-world-leaders-gather-in-china": "2026-11-18T17:01:06.219915+00:00",
     "https://www.theguardian.com/world/live/2026/nov/19/russia-ukraine-war-coalition-of-the-willing-europe-latest-news-updates": "2026-11-19T17:01:02.906148+00:00",
-    "https://www.theguardian.com/world/live/2026/nov/20/uk-eu-european-union-brexit-deal-andy-burnham-latest-news-updates": "2026-11-20T17:01:07.817850+00:00"
+    "https://www.theguardian.com/world/live/2026/nov/20/uk-eu-european-union-brexit-deal-andy-burnham-latest-news-updates": "2026-11-20T17:01:07.817850+00:00",
+    "https://www.france24.com/en/france-demonstrations-losing-steam-as-movement-enters-sixth-week": "2026-11-21T17:01:03.048956+00:00"
   },
-  "last_source": "The Guardian",
+  "last_source": "France 24",
   "ultimi_titoli": [
+    "france demonstrations losing steam as movement enters sixth week",
     "eu wants closest possible relationship with uk after agreeing brexit reset deal live",
     "ukraine s allies meet in berlin with air defence energy and financial support on the agenda europe live",
     "apec summit live xi welcomes trump on china visit as putin claims europe in humiliating decline",
     "trump claims us is looking into iranian bomb plot in washington despite no credible threats",
-    "five eu countries announce migrant deportation centre in rwanda",
-    "saudi arabia qatar jordan egypt condemn iranian attack on bahrain as it happened"
+    "five eu countries announce migrant deportation centre in rwanda"
   ],
-  "ultimo_slot": "2026-11-20-18"
+  "ultimo_slot": "2026-11-21-18"
 }
