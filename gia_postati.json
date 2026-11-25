@@ -1,22 +1,21 @@
 {
   "postati": {
-    "https://www.theguardian.com/world/2026/nov/17/trump-reported-iranian-plot-dirty-bomb-washington": "2026-11-17T17:01:05.501940+00:00",
-    "https://www.theguardian.com/world/live/2026/nov/18/apec-summit-live-updates-xi-putin-trump-world-leaders-gather-in-china": "2026-11-18T17:01:06.219915+00:00",
     "https://www.theguardian.com/world/live/2026/nov/19/russia-ukraine-war-coalition-of-the-willing-europe-latest-news-updates": "2026-11-19T17:01:02.906148+00:00",
     "https://www.theguardian.com/world/live/2026/nov/20/uk-eu-european-union-brexit-deal-andy-burnham-latest-news-updates": "2026-11-20T17:01:07.817850+00:00",
     "https://www.france24.com/en/france-demonstrations-losing-steam-as-movement-enters-sixth-week": "2026-11-21T17:01:03.048956+00:00",
     "https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected": "2026-11-22T17:01:05.775871+00:00",
     "https://www.theguardian.com/us-news/live/2026/nov/23/donald-trump-democrats-republicans-presidential-primary-midterms-house-latest-news-updates": "2026-11-23T17:01:04.148526+00:00",
-    "https://www.theguardian.com/business/2026/nov/24/uk-eu-made-in-europe-trade-cars-tariffs": "2026-11-24T17:01:03.286166+00:00"
+    "https://www.theguardian.com/business/2026/nov/24/uk-eu-made-in-europe-trade-cars-tariffs": "2026-11-24T17:01:03.286166+00:00",
+    "https://www.theguardian.com/us-news/live/2026/nov/25/donald-trump-jensen-huang-nvidia-pardon-senate-hearing-iowa-abdul-el-sayed-latest-news-updates": "2026-11-25T17:01:13.354281+00:00"
   },
   "last_source": "The Guardian",
   "ultimi_titoli": [
+    "trump says pardon for nvidia boss huang always an option after accusations of breaking export laws us politics live",
     "irish plan offers burnham breakthrough on made in europe",
     "trump says he spoke to nvidia board directly about jensen huang and insists ceo s return doesn t pose a national security risk live",
     "cop31 climate talks break down as key deal rejected",
     "france demonstrations losing steam as movement enters sixth week",
-    "eu wants closest possible relationship with uk after agreeing brexit reset deal live",
-    "ukraine s allies meet in berlin with air defence energy and financial support on the agenda europe live"
+    "eu wants closest possible relationship with uk after agreeing brexit reset deal live"
   ],
-  "ultimo_slot": "2026-11-24-18"
+  "ultimo_slot": "2026-11-25-18"
 }
